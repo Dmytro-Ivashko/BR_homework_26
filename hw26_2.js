@@ -12,7 +12,7 @@
 // Функция сокращения объекта-дроби. */
 
 let frac1 = {
-    num: 4,
+    num: 8,
     den: 15,
 }
 let frac2 = {
@@ -29,26 +29,43 @@ function nod(x, y) {
     return x;
   }
 
-//   console.log(nod(6, 240));
+  function fracRed(a, b) {
+    c = nod(a, b);
+    if (c > 1) {
+     a = a / c;
+     b = b / c;
+  }
+  }
+
+
   /*   Функция сложения 2-х объектов-дробей;  */
-let addition = (num1, den1, num2, den2) => {
+let addition = (a, b, c, d) => {
+let numerator, denominator;
+    denominator = nok(b, d)
+let addition = (a + c) / denominator;
 
-let nokNumber = nok(den1, den2)
-let addition = (num1 + num2) / nokNumber;
-
-    if ((addition < 1) && (frac1.den == frac2.den)){
-      console.log(`Addition = ${num1 + num2} / ${nokNumber}`);
-    } else if ((addition < 1) && (frac1.den != frac2.den)) {
-      let nodNumber = nod((num1 + num2), nokNumber);
-      console.log(`Addition = ${(num1 + num2)/nodNumber} / ${nokNumber/nodNumber}`)
+    if ((addition < 1) && (b == d)){
+      numerator = a + c;
+      console.log(numerator);
+    } else if ((addition < 1) && (b != d)) {
+      let nodNumber = nod((a + c), denominator);
+      console.log(`Addition = ${(a + c)/nodNumber} / ${denominator/nodNumber}`)
     } else {
-        addition = (num1 + num2) / nokNumber;
-
+        addition = (a + c) / denominator;
     }
+    // console.log(numerator);
+    fracRed(numerator, denominator);
+    console.log(`Addition = ${numerator} / ${denominator}`);
+
+
+
+    
+    
   
 };
 
-addition(frac1.num, frac1.den, frac2.num, frac2.den)
+addition(frac1.num, frac1.den, frac2.num, frac2.den);
+
 // console.log(frac1.den, frac2.den)
 
   /*   Функция сложения 2-х объектов-дробей;  */
