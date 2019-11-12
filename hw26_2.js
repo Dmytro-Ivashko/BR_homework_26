@@ -11,13 +11,13 @@
 
 // Функция сокращения объекта-дроби. */
 
-let fractions1 = {
-    num: 6,
-    den: 7,
+let frac1 = {
+    num: 4,
+    den: 15,
 }
-let fractions2 = {
-    num: 8,
-    den: 6,
+let frac2 = {
+    num: 2,
+    den: 15,
 }
 
 function nok(x,y){
@@ -29,14 +29,27 @@ function nod(x, y) {
     return x;
   }
 
+//   console.log(nod(6, 240));
   /*   Функция сложения 2-х объектов-дробей;  */
 let addition = (num1, den1, num2, den2) => {
-    addition = (num1 + num2) / nok(den1, den2)
-    console.log(addition);
+
+let nokNumber = nok(den1, den2)
+let addition = (num1 + num2) / nokNumber;
+
+    if ((addition < 1) && (frac1.den == frac2.den)){
+      console.log(`Addition = ${num1 + num2} / ${nokNumber}`);
+    } else if ((addition < 1) && (frac1.den != frac2.den)) {
+      let nodNumber = nod((num1 + num2), nokNumber);
+      console.log(`Addition = ${(num1 + num2)/nodNumber} / ${nokNumber/nodNumber}`)
+    } else {
+        addition = (num1 + num2) / nokNumber;
+
+    }
+  
 };
 
-addition(fractions1.num, fractions1.den, fractions2.num, fractions2.den)
-
+addition(frac1.num, frac1.den, frac2.num, frac2.den)
+// console.log(frac1.den, frac2.den)
 
   /*   Функция сложения 2-х объектов-дробей;  */
 
@@ -47,4 +60,3 @@ let reduction  = () => {};
 
 
 
-console.log(nok(fractions1.den, fractions2.den));
