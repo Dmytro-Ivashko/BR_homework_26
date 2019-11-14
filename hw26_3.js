@@ -37,7 +37,7 @@ function timeNormalize () {
         }
         
     }
-    console.log(`На годинику ${time.hours} год. ${time.minutes} хв. ${time.seconds} сек.`);
+    console.log(`На годиннику ${time.hours} год. ${time.minutes} хв. ${time.seconds} сек.`);
 };
 
 function addSeconds(s) {
