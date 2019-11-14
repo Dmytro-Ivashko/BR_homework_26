@@ -17,38 +17,57 @@
   let time = {
     hours: 23,
     minutes: 50,
-    seconds: 30,
+    seconds: 35,
   };
-//    const secondsInHours = 3600;
-//    const secondsInMinutes = 60;
 
-function currentTime (a, b, c) {
-    console.log(`На годинику ${a} год. ${b} хв. ${c} сек.`)
-}
-
-function addSeconds (s) {
-    // let currentSeconds = (time.hours * secondsInHours) + (time.minutes * secondsInMinutes) + time.seconds;
-    //     currentSeconds = currentSeconds + s;
-    if (s < 60) {
-        time.seconds = time.seconds + s;
+function timeNormalize () {
+    while (time.hours > 23 || time.minutes > 60 || time.seconds >60) {
         if (time.seconds > 60) {
+            time.seconds = time.seconds - 60;
             time.minutes++;
-            time.seconds -= 60;
-        } else if (time.minutes > 60){
+        } else if (time.minutes > 60) {
+            time.minutes = time.minutes - 60;
             time.hours++;
-            time.minutes  -= 60;
-        } else if (time.hours > 24){
-            time.hours
- > 24
+        } else if (time.hours > 23) {
+            if (time.hours == 24){
+                time.hours = 0;
+            } else {
+                time.hours = time.hours - 24;
+            }
         }
-    } else {
-
+        
     }
+    console.log(`На годинику ${time.hours} год. ${time.minutes} хв. ${time.seconds} сек.`);
+};
 
+function addSeconds(s) {
+    time.seconds = time.seconds + s;
+    console.log(`------- Додамо ${s} сек. -------`)
+    timeNormalize();
+}
+function addMinutes(m) {
+    time.minutes = time.minutes + m;
+    console.log(`------- Додамо ${m} хв. -------`)
+    timeNormalize();
+}
+function addHours(h) {
+    time.hours = time.hours + h;
+    console.log(`------- Додамо ${h} год. -------`)
+    timeNormalize();
 }
 
-addSeconds(26)
 
 
-console.log(currentTime(time.hours, time.minutes, time.seconds))
+// --------------------
+timeNormalize();
+addSeconds(500);
+addMinutes(500);
+addHours(500);
+
+
+
+
+
+
+
 
