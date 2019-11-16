@@ -23,16 +23,16 @@
 function timeNormalize () {
     while (time.hours > 23 || time.minutes > 60 || time.seconds >60) {
         if (time.seconds > 60) {
-            time.seconds = time.seconds - 60;
+            time.seconds -= 60;
             time.minutes++;
         } else if (time.minutes > 60) {
-            time.minutes = time.minutes - 60;
+            time.minutes -= 60;
             time.hours++;
         } else if (time.hours > 23) {
             if (time.hours == 24){
                 time.hours = 0;
             } else {
-                time.hours = time.hours - 24;
+                time.hours -= 24;
             }
         }
         
@@ -41,17 +41,17 @@ function timeNormalize () {
 };
 
 function addSeconds(s) {
-    time.seconds = time.seconds + s;
+    time.seconds += s;
     console.log(`------- Додамо ${s} сек. -------`)
     timeNormalize();
 }
 function addMinutes(m) {
-    time.minutes = time.minutes + m;
+    time.minutes += m;
     console.log(`------- Додамо ${m} хв. -------`)
     timeNormalize();
 }
 function addHours(h) {
-    time.hours = time.hours + h;
+    time.hours += h;
     console.log(`------- Додамо ${h} год. -------`)
     timeNormalize();
 }
@@ -62,7 +62,7 @@ function addHours(h) {
 timeNormalize();
 addSeconds(500);
 addMinutes(500);
-addHours(500);
+addHours(600);
 
 
 
