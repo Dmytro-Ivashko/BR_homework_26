@@ -21,14 +21,14 @@
   };
 
 function timeNormalize () {
-    while (time.hours > 23 || time.minutes > 60 || time.seconds >60) {
+    while (time.hours >= 24 || time.minutes > 60 || time.seconds >60) {
         if (time.seconds > 60) {
             time.seconds -= 60;
             time.minutes++;
         } else if (time.minutes > 60) {
             time.minutes -= 60;
             time.hours++;
-        } else if (time.hours > 23) {
+        } else if (time.hours >= 24) {
             if (time.hours == 24){
                 time.hours = 0;
             } else {
