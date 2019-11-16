@@ -60,7 +60,7 @@ function addHours(h) {
 timeNormalize();
 addSeconds(500);
 addMinutes(500);
-addHours(600);
+addHours(60);
 
 
 
