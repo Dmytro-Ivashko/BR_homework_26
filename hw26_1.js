@@ -26,7 +26,7 @@ let distance = prompt("Введіть відстань яку бажаєте п�
 let distanceOvercoming = distance => {
   let overcoming = distance / car.speed;
   if (overcoming > 4) {
-    overcoming = overcoming + Math.floor(overcoming / 4);
+    overcoming += Math.floor(overcoming / 4);
   }
   hoursSpent = Math.floor(overcoming);
   minutesSpent = Math.round((overcoming - hoursSpent) * 60);

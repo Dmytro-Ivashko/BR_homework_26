@@ -56,8 +56,6 @@ function addHours(h) {
     timeNormalize();
 }
 
-
-
 // --------------------
 timeNormalize();
 addSeconds(500);
