@@ -6,11 +6,13 @@
      на 1 час.
  */
 
+
+
 let car = {
   manufacture: "Opel",
   model: "Astra",
   year: 2008,
-  speed: 120
+  speed: 120,
 };
 
 let carInfo = () => {
